@@ -1,119 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Mustafa — Video Game Sales (Interactive)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- d3 -->
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-
-  <!-- quick built-in styles so you don’t need a separate CSS file -->
-  <style>
-    :root {
-      --bg: #0f0f12;
-      --panel: #151518;
-      --text: #e8e8ea;
-      --muted: #a9abb3;
-      --accent: #7cc7ff;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; padding: 24px;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg); color: var(--text);
-    }
-    h1 {
-      margin: 0 0 6px 0; font-weight: 700; letter-spacing: 0.2px;
-      text-align: center;
-    }
-    .sub {
-      text-align: center; color: var(--muted); margin-bottom: 18px;
-    }
-    .controls {
-      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
-      margin: 10px auto 18px; padding: 10px; background: var(--panel);
-      border: 1px solid #202028; border-radius: 12px;
-      max-width: 1100px;
-    }
-    .controls label { display: flex; align-items: center; gap: 8px; color: var(--muted); }
-    .controls input[type="file"] { display: none; }
-    .btn {
-      background: #2a2a33; color: var(--text); border: 1px solid #32323a;
-      padding: 8px 14px; border-radius: 10px; cursor: pointer;
-    }
-    select {
-      background: #1b1b21; color: var(--text); border: 1px solid #2b2b33;
-      padding: 8px 10px; border-radius: 10px;
-    }
-    #chart {
-      max-width: 1100px; margin: 0 auto; position: relative;
-      background: var(--panel); border: 1px solid #202028; border-radius: 12px;
-      padding: 6px 6px 2px 6px;
-    }
-    #tooltip {
-      position: absolute; pointer-events: none; opacity: 0;
-      background: rgba(15,15,18,0.96); border: 1px solid #2c2c34; color: var(--text);
-      padding: 8px 10px; border-radius: 8px; font-size: 13px;
-      transform: translate(12px, 12px);
-    }
-    .legend text { fill: var(--text); font-size: 12px; }
-    .legend rect { stroke: #0003; }
-    .axis text { fill: var(--text); font-size: 12px; }
-    .axis path, .axis line { stroke: #3a3a45; }
-    .label { fill: var(--muted); font-size: 12px; }
-    .note {
-      max-width: 1100px; margin: 8px auto 0; text-align: center; color: var(--muted);
-      font-size: 12px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Game Data Study</title>
 </head>
-
 <body>
-  <h1>Video Game Sales Over Time (Interactive)</h1>
-  <div class="sub">load your CSV → pick a region & platform family → hover for details → click legend items to hide/show.</div>
 
-  <div class="controls">
-    <label>
-      <button id="pickFile" class="btn">Choose CSV</button>
-      <input id="fileInput" type="file" accept=".csv" />
-      <span id="fileName" class="sub" style="margin:0;"></span>
-    </label>
-
-    <label>
-      Region:
-      <select id="regionSelect" aria-label="Region">
-        <option value="Global_Sales" selected>Global_Sales</option>
-        <option value="NA_Sales">NA_Sales</option>
-        <option value="EU_Sales">EU_Sales</option>
-        <option value="JP_Sales">JP_Sales</option>
-        <option value="Other_Sales">Other_Sales</option>
-      </select>
-    </label>
-
-    <label>
-      Platform:
-      <select id="platformSelect" aria-label="Platform Family">
-        <option value="All" selected>All</option>
-        <option value="Nintendo">Nintendo</option>
-        <option value="PlayStation">PlayStation</option>
-        <option value="Xbox">Xbox</option>
-        <option value="PC">PC</option>
-        <option value="Other">Other</option>
-      </select>
-    </label>
+  <header>
+    <h1>Header bar: title, subtitle, navigation links goes here</h1>
+  </header>
+  
+  <div>
+    <h2>Overall Introduction</h2>
+    <p>Introduction text goes here</p>
   </div>
 
-  <div id="chart">
-    <div id="tooltip"></div>
+  <div>
+    <h2>Introduction to the Data</h2>
+    <p>Data Introduction paragraph(s)</p>
+    <p>Data fields table</p>
   </div>
-  <div class="note">tip: if the lines look chaotic, toggle genres in the legend or switch the platform family.</div>
 
-  <script src="script.js"></script>
-  <script>
-    // nice UX: clicking the visible button opens the hidden file input
-    document.getElementById('pickFile').addEventListener('click', () => {
-      document.getElementById('fileInput').click();
-    });
-  </script>
+  <div>
+    <h2>Data Visualizations</h2>
+    <h3>Subheadings for the different topics of the visualizations</h3>
+    <box>visualization</box>
+    <p>text caption/explanation of each visualization</p>
+  </div>
+
+  <div>
+    <h2>Summary and Future Work</h2>
+    <p>Conclusion paragraph(s)</p>
+  </div>
+  
 </body>
 </html>
