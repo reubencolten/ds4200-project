@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Game Data Study</title>
+  <meta charset="utf-8" />
+  <title>Mustafa — Video Game Sales (Interactive)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <h1>Video Game Sales Over Time (Interactive)</h1>
+  <div class="sub">Data auto-loaded from <b>vgsales.csv</b> → pick a region & platform → hover for details → click legend to hide/show.</div>
 
-  <header>
-    <h1>Header bar: title, subtitle, navigation links goes here</h1>
-  </header>
-  
-  <div>
-    <h2>Overall Introduction</h2>
-    <p>Introduction text goes here</p>
+  <div class="controls">
+    <label>
+      Region:
+      <select id="regionSelect" aria-label="Region">
+        <option value="Global_Sales" selected>Global_Sales</option>
+        <option value="NA_Sales">NA_Sales</option>
+        <option value="EU_Sales">EU_Sales</option>
+        <option value="JP_Sales">JP_Sales</option>
+        <option value="Other_Sales">Other_Sales</option>
+      </select>
+    </label>
+
+    <label>
+      Platform:
+      <select id="platformSelect" aria-label="Platform Family">
+        <option value="All" selected>All</option>
+        <option value="Nintendo">Nintendo</option>
+        <option value="PlayStation">PlayStation</option>
+        <option value="Xbox">Xbox</option>
+        <option value="PC">PC</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
   </div>
 
-  <div>
-    <h2>Introduction to the Data</h2>
-    <p>Data Introduction paragraph(s)</p>
-    <p>Data fields table</p>
+  <div id="chart">
+    <div id="tooltip"></div>
   </div>
+  <div class="note">Tip: toggle genres in the legend or switch platforms to explore trends.</div>
 
-  <div>
-    <h2>Data Visualizations</h2>
-    <h3>Subheadings for the different topics of the visualizations</h3>
-    <box>visualization</box>
-    <p>text caption/explanation of each visualization</p>
-  </div>
-
-  <div>
-    <h2>Summary and Future Work</h2>
-    <p>Conclusion paragraph(s)</p>
-  </div>
-  
+  <script src="script.js"></script>
 </body>
 </html>
