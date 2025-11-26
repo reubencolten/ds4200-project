@@ -19,7 +19,7 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* header text */
+/* headings */
 h1 {
   text-align: center;
   font-weight: 700;
@@ -32,7 +32,7 @@ h1 {
   color: var(--muted);
 }
 
-/* control panel */
+/* controls bar */
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -49,20 +49,6 @@ h1 {
 label {
   color: var(--muted);
   font-size: 14px;
-}
-
-#fileInput {
-  display: none;
-}
-
-/* buttons + dropdowns */
-.btn {
-  background: #2a2a33;
-  color: var(--text);
-  border: 1px solid #32323a;
-  border-radius: 10px;
-  padding: 8px 14px;
-  cursor: pointer;
 }
 
 select {
@@ -96,34 +82,37 @@ select {
   border-radius: 8px;
   font-size: 13px;
   opacity: 0;
-  color: var(--text);
+  color: white; /* force tooltip text visible */
 }
 
-/* axes + legend */
+/* axis */
 .axis text {
-  fill: var(--text);
+  fill: white;
   font-size: 12px;
 }
 
-.axis path, .axis line {
+.axis path, 
+.axis line {
   stroke: #3a3a45;
 }
 
-.legend text {
-  fill: var(--text);
+/* axis labels under/left */
+.label {
+  fill: white;
+  font-size: 12px;
+}
+
+/* LEGEND FIX — the important part */
+.legend-text {
+  fill: white !important;
   font-size: 12px;
 }
 
 .legend rect {
-  stroke: #0003;
+  stroke: white;
 }
 
-/* misc text */
-.label {
-  fill: var(--muted);
-  font-size: 12px;
-}
-
+/* footer note */
 .note {
   max-width: 1100px;
   margin: 8px auto 0;
