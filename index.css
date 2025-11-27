@@ -1,0 +1,98 @@
+:root {
+  --bg: white;
+  --border: lightgrey;
+}
+
+body {
+  padding: 0 2rem;
+}
+
+.header-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 1%;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  margin: 0%;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 2;
+  justify-content: space-around;
+}
+
+.nav-link {
+  color: mediumblue;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: cornflowerblue;
+}
+
+nav-link:visited {
+  color: none;
+}
+
+iframe {
+  width: 1210px;
+  height: 900px;
+  /*aspect-ratio: 4/3; */
+  border-style: none;
+}
+
+/* linechart title and controls */
+.line-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+label {
+  font-size: 16px;
+}
+
+select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 4px 5px;
+  border-radius: 10px;
+}
+
+/* line chart tooltip */
+#tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  opacity: 0;
+}
+
+/* chart container */
+#chart {
+  margin: 0 auto;
+  padding: 6px;
+}
+
+.note {
+  text-align: center;
+}

@@ -120,3 +120,8 @@ select {
   color: var(--muted);
   font-size: 12px;
 }
+
+iframe {
+  width: fit-content;
+  height: auto;
+}

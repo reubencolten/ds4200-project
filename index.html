@@ -4,35 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video Game Data Study</title>
+
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 </head>
 <body>
 
-  <header>
-    <h1>Header bar: title, subtitle, navigation links goes here</h1>
+  <header class="header-bar">
+    <div class="header-left">
+      <h1 class="title">Video Game Sales: Data Analysis</h1>
+      <p class="subtitle">Shayna Basu, Reuben Colten, Mustafa Farooqui</p>
+    </div>
+
+    <div class="header-nav">
+      <div class="nav-container">
+        <a class="nav-link" href="#intro">Introduction</a>
+      </div>
+      <div class="nav-container">
+        <a class="nav-link" href="#data-about">About the Data</a>
+      </div>
+      <div class="nav-container">
+        <a class="nav-link" href="#visualizations">Visualizations</a>
+      </div>
+      <div class="nav-container">
+        <a class="nav-link" href="#conclusion">Conclusion</a>
+      </div>
+    </div>
   </header>
   
-  <div>
+  <div id="intro">
     <h2>Overall Introduction</h2>
     <p>Introduction text goes here</p>
   </div>
 
-  <div>
-    <h2>Introduction to the Data</h2>
+  <div id="data-about">
+    <h2>About the Data</h2>
     <p>Data Introduction paragraph(s)</p>
     <p>Data fields table</p>
   </div>
 
-  <div>
+  <div id="visualizations">
     <h2>Data Visualizations</h2>
     <h3>Subheadings for the different topics of the visualizations</h3>
     <box>visualization</box>
     <p>text caption/explanation of each visualization</p>
+
+    <div id="genre-bars">
+      <iframe src="genre_bars.html"></iframe>
+      <p>genre bars description goes here</p>
+    </div>
+
+    <div id="linechart">
+      <div class="line-header">
+        <h3 id="linechart-title">
+          Video Game Sales Over Time
+        </h3>
+        <label>
+          Region:
+          <select id="regionSelect" aria-label="Region">
+            <option value="Global_Sales" selected>Global_Sales</option>
+            <option value="NA_Sales">NA_Sales</option>
+            <option value="EU_Sales">EU_Sales</option>
+            <option value="JP_Sales">JP_Sales</option>
+            <option value="Other_Sales">Other_Sales</option>
+          </select>
+        </label>
+
+        <label>
+          Platform:
+          <select id="platformSelect" aria-label="Platform Family">
+            <option value="All" selected>All</option>
+            <option value="Nintendo">Nintendo</option>
+            <option value="PlayStation">PlayStation</option>
+            <option value="Xbox">Xbox</option>
+            <option value="PC">PC</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+      </div>
+      <p class="note">Tip: Toggle genres by clicking colors in the legend, hover over a point for details</p>
+
+      <div id="chart">
+        <div id="tooltip"></div>
+      </div>
+      <p>line chart description goes here</p>
+    </div>
   </div>
 
-  <div>
+  <div id="conclusion">
     <h2>Summary and Future Work</h2>
     <p>Conclusion paragraph(s)</p>
   </div>
   
+  <script src="script.js"></script>
 </body>
 </html>
