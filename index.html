@@ -12,7 +12,7 @@
 
   <header class="header-bar">
     <div class="header-left">
-      <h1 class="title">Video Game Sales: Data Analysis</h1>
+      <h1 class="title">Video Game Sales Data Analysis</h1>
       <p class="subtitle">Shayna Basu, Reuben Colten, Mustafa Farooqui</p>
     </div>
 
@@ -41,6 +41,62 @@
     <h2>About the Data</h2>
     <p>Data Introduction paragraph(s)</p>
     <p>Data fields table</p>
+    
+    <table class="tg">
+      <thead>
+        <tr>
+          <th class="tg-0lax">Variable Name</th>
+          <th class="tg-0lax">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tg-0lax">Rank</td>
+          <td class="tg-0lax">Ranking of overall sales</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Name</td>
+          <td class="tg-0lax">The game's name</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Platform</td>
+          <td class="tg-0lax">Platform of the game's release (i.e. PC, PS4, etc.)</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Year</td>
+          <td class="tg-0lax">Year of the game's release</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Genre</td>
+          <td class="tg-0lax">Genre of the game</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Publisher</td>
+          <td class="tg-0lax">Publisher of the game</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">NA_Sales</td>
+          <td class="tg-0lax">Sales in North America (in millions)</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">EU_Sales</td>
+          <td class="tg-0lax">Sales in Europe (in millions)</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">JP_Sales</td>
+          <td class="tg-0lax">Sales in Japan (in millions)</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Other_Sales</td>
+          <td class="tg-0lax">Sales in the rest of the world (in millions)</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Global_Sales</td>
+          <td class="tg-0lax">Total worldwide sales (in millions)</td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 
   <div id="visualizations">
@@ -50,7 +106,7 @@
     <p>text caption/explanation of each visualization</p>
 
     <div id="genre-bars">
-      <iframe src="genre_bars.html"></iframe>
+      <iframe src="interactive_visualizations/genre_bars.html"></iframe>
       <p>genre bars description goes here</p>
     </div>
 
@@ -88,6 +144,23 @@
         <div id="tooltip"></div>
       </div>
       <p>line chart description goes here</p>
+    </div>
+
+
+    <div id="treemap">
+      <iframe src="interactive_visualizations/treemap.html"></iframe>
+      <p>treemap description goes here</p>
+    </div>
+
+    <div id="sankey">
+      <iframe src="interactive_visualizations/sankey_sales.html"></iframe>
+      <p>sankey description goes here</p>
+    </div>
+
+    <div id="pub-bars">
+      <img src="/python_visualizations/NA_pub_bars.svg" />
+      <img src="/python_visualizations/EU_pub_bars.svg" />
+      <img src="/python_visualizations/JP_pub_bars.svg" />
     </div>
   </div>
 
