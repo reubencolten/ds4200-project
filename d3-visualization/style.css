@@ -4,11 +4,6 @@
   --text: #e8e8ea;
   --muted: #a9abb3;
   --border: #1f1f26;
-  --accent: #7cc7ff;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
@@ -16,112 +11,85 @@ body {
   padding: 24px;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
-/* headings */
 h1 {
   text-align: center;
-  font-weight: 700;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
 }
 
 .sub {
   text-align: center;
-  margin-bottom: 18px;
   color: var(--muted);
+  margin-bottom: 16px;
 }
 
-/* controls bar */
 .controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  padding: 12px;
-  margin: 0 auto 20px;
   max-width: 1100px;
+  margin: 0 auto 20px;
+  padding: 12px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 12px;
 }
 
-label {
-  color: var(--muted);
-  font-size: 14px;
-}
-
 select {
-  background: #1b1b21;
+  background: #1c1c20;
+  border: 1px solid #33333a;
   color: var(--text);
-  border: 1px solid #2b2b33;
-  padding: 8px 10px;
-  border-radius: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
 }
 
-/* chart container */
 #chart {
   max-width: 1100px;
   margin: 0 auto;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 6px;
+  padding: 8px;
   position: relative;
 }
 
-/* tooltip */
-#tooltip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  background: rgba(15, 15, 18, 0.95);
-  border: 1px solid #2c2c34;
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-size: 13px;
-  opacity: 0;
-  color: white; /* force tooltip text visible */
-}
-
-/* axis */
-.axis text {
-  fill: white;
-  font-size: 12px;
-}
-
-.axis path, 
-.axis line {
-  stroke: #3a3a45;
-}
-
-/* axis labels under/left */
 .label {
   fill: white;
   font-size: 12px;
 }
 
-/* LEGEND FIX — the important part */
+.axis text {
+  fill: white;
+}
+
+#tooltip {
+  position: absolute;
+  background: rgba(0,0,0,0.85);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- LEGEND TEXT WHITE FIX --- */
 .legend-text {
   fill: white !important;
   font-size: 12px;
 }
 
-.legend rect {
+/* optional: make the boxes look cleaner */
+.item rect {
   stroke: white;
+  stroke-width: 1px;
 }
 
-/* footer note */
 .note {
-  max-width: 1100px;
-  margin: 8px auto 0;
   text-align: center;
+  margin-top: 10px;
   color: var(--muted);
   font-size: 12px;
-}
-
-iframe {
-  width: fit-content;
-  height: auto;
 }
