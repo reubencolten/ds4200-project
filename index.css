@@ -13,6 +13,21 @@ main {
   margin-right: auto;
 }
 
+h2 {
+  text-align: center;
+}
+
+.resources {
+  font-size: large;
+  padding: 10px 15px;
+  background-color: whitesmoke;
+}
+
+.link {
+  border-left: 5px lightgrey solid;
+  padding: 10px;
+}
+
 strong {
   font-weight: bold;
 }
