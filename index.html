@@ -13,7 +13,6 @@
   <header class="header-bar">
     <div class="header-left">
       <h1 class="title">Video Game Sales Data Analysis</h1>
-      <p class="subtitle">Shayna Basu, Reuben Colten, Mustafa Farooqui</p>
     </div>
 
     <div class="header-nav">
@@ -31,307 +30,320 @@
       </div>
     </div>
   </header>
-  
-  <div id="intro">
-    <h2>Overall Introduction</h2>
-    <p>The video game industry has evolved from a niche hobby into a global economic powerhouse.
-      In 2024, the global video game market generated $184.3 billion in revenue (
-      <a href="https://app2top.com/news/the-gaming-industry-in-2024-by-the-numbers-a-review-by-gamesindustry-276003.html">
-        app2top.com
-      </a>
-      ) while U.S. consumer spending alone reached $58.7 billion, marking a 106% increase over the
-      past decade from $28.4 billion in 2014 (
-      <a href="https://www.theesa.com/u-s-consumer-spending-on-video-games-totaled-58-7-billion-in-2024/">
-        theesa.com
-      </a>
-      ). These figures tell the story of an industry that has grown beyond to become a cultural
-      force, now standing shoulder-to-shoulder with established entertainment mediums such as film and music.
-    </p>
-    <p>
-      The gaming industry is also booming because of its diversity. China and the United States
-      together account for over half of global gaming revenue, generating $48.7 billion and
-      $47.6 billion, respectively, yet markets like Japan and South Korea are also not far behind
-      (<a href="https://www.visualcapitalist.com/video-game-revenue-by-country-2024/">visualcapitalist</a>).
-      This industry spans multiple platforms—consoles, PCs, and mobile devices—each with different player 
-      behaviors, preferences, and spending patterns. 
-    </p>
-    <p>
-      The video game market spans platforms and genres, appealing to players of all different
-      backgrounds and interests. As a major mode of recreation and storytelling, we’re interested
-      in understanding what drives success in this dynamic market. With  rapidly evolving trends in
-      genres, platforms, and monetization strategies, analyzing historical sales data can reveal
-      valuable patterns about what resonates with audiences across different regions and demographics.
-      This dataset allows us to explore which games, publishers, and platforms have shaped the industry's
-      remarkable trajectory. Through visualizations, we explore trends over time to interpret what
-      platforms and publishers are popular over the years. We compare genres, developers, and
-      platforms to consider what types of games are successful with a focus on differences in regions. 
-    </p>
-  </div>
 
-  <div id="data-about">
-    <h2>About the Data</h2>
-    <p>
-      This data was downloaded from 
-      <a href="https://www.kaggle.com/datasets/gregorut/videogamesales/data" target="_blank">Kaggle</a> and
-      contains a list of video games with a sales count of greater than 100,000 copies.
-      The user who posted the dataset created it by scraping 
-      <a href="https://vgchartz.com" target="_blank">vgchartz.com</a>, a video game sales
-      tracking website based in the UK.
-      The data contains a column attribute called “rank,” corresponding to how the video games are
-      ordered on the site by number of sales. It also contains the columns Name, Year, 
-      Platform, Genre, Publisher, North American Sales, European Sales, Japan Sales, sales for
-      everywhere except those three regions, and Global Sales, which is total worldwide sales.
-      Values in each sales column represent sales in millions. The dataset includes video games
-      published between 1980 and 2020, inclusive.
-    </p>
-    <p>
-      The original dataset contained 16,598 rows. To reduce the size to better fit the guidelines
-      of this project, we preprocessed the data by dropping the rows containing null values and
-      filtered the data to contain only video games published between 2000 and 2015, inclusive.
-      This reduces our data set to just under 14,000 rows. 
-    </p>
-    
-    <table class="tg">
-      <thead>
-        <tr>
-          <th class="tg-0lax">Variable Name</th>
-          <th class="tg-0lax">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="tg-0lax">Rank</td>
-          <td class="tg-0lax">Ranking of overall sales</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">Name</td>
-          <td class="tg-0lax">The game's name</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">Platform</td>
-          <td class="tg-0lax">Platform of the game's release (i.e. PC, PS4, etc.)</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">Year</td>
-          <td class="tg-0lax">Year of the game's release</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">Genre</td>
-          <td class="tg-0lax">Genre of the game</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">Publisher</td>
-          <td class="tg-0lax">Publisher of the game</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">NA_Sales</td>
-          <td class="tg-0lax">Sales in North America (in millions)</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">EU_Sales</td>
-          <td class="tg-0lax">Sales in Europe (in millions)</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">JP_Sales</td>
-          <td class="tg-0lax">Sales in Japan (in millions)</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">Other_Sales</td>
-          <td class="tg-0lax">Sales in the rest of the world (in millions)</td>
-        </tr>
-        <tr>
-          <td class="tg-0lax">Global_Sales</td>
-          <td class="tg-0lax">Total worldwide sales (in millions)</td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
-
-  <div id="visualizations">
-    <h2>Data Visualizations</h2>
-    <h3>Comparing Across Regions</h3>
-    <p>
-      The structure of the data lends itself to comparison of sales in different regions, and that's
-      where we started in order to investigate what might make a game successful, and if that's
-      different depending on the targeted region.
-    </p>
-
-    <div id="pub-bars">
-      <img src="python_visualizations/NA_pub_bars.svg" />
-      <img src="python_visualizations/EU_pub_bars.svg" />
-      <img src="python_visualizations/JP_pub_bars.svg" />
-    </div>
-    <p>
-      Each of these bar charts shows the top ten publishers by the total number of sales across
-      all of their games. We can see that while the top publishers based on sales in North
-      America and Europe are very similar, the ranking of Publishers by Japansese sales is
-      notably different. Although Nintendo is a top two publisher across all regions, in Japan
-      it has displaced Electronic Arts for first place, and has a significantly higher number of
-      sales than even the second place publisher.
-    </p>
-    <p>
-      It seems there may be a significant difference in sales trends between Japan and 
-      North America/Europe, but there are a variety of reasons a certain publisher might be more
-      popular than others. Beyond the quality of the games they produce, they may specialize in
-      a certain popular genre or publish games for a popular platform.
-    </p>
-
-    <div id="genre-bars">
-      <iframe src="interactive_visualizations/genre_bars.html"></iframe>
-      <p>
-        These bar charts depict sales in millions by video game genre. The top bar chart is a
-        side-by-side bar chart with the different colored bars representing different market
-        regions: Europe, Japan, North America, and all other regions. You can select which
-        regions you want dispalyed in this chart by clicking the corresponding colored square
-        in the legend. To make more than one selection when clicking on the legend, hold down
-        the shift key. The chart below is video game sales by genre, globally. The genres on
-        both charts are sorted in descending order by global sales. By default, the charts
-        show data for the games released between 2000 and 2015, or you can select which year
-        you want to view specifically from the drop down.
+  <main>
+    <div id="intro">
+      <h2>Overall Introduction</h2>
+      <p>The video game industry has evolved from a niche hobby into a global economic powerhouse.
+        In 2024, the global video game market generated $184.3 billion in revenue (
+        <a href="https://app2top.com/news/the-gaming-industry-in-2024-by-the-numbers-a-review-by-gamesindustry-276003.html">
+          app2top.com
+        </a>
+        ) while U.S. consumer spending alone reached $58.7 billion, marking a 106% increase over the
+        past decade from $28.4 billion in 2014 (
+        <a href="https://www.theesa.com/u-s-consumer-spending-on-video-games-totaled-58-7-billion-in-2024/">
+          theesa.com
+        </a>
+        ). These figures tell the story of an industry that has grown beyond to become a cultural
+        force, now standing shoulder-to-shoulder with established entertainment mediums such as film and music.
       </p>
       <p>
-        From this visualization, we can see that North America seems to dominate sales, being the
-        region with the most sales for every genre. North America's lead in total sales was 
-        visibile in the previous bar graphs, but is clearer here when placed side-by-side with
-        other regions instead of relying on reading and remembering the numerical sales counts.
+        The gaming industry is also booming because of its diversity. China and the United States
+        together account for over half of global gaming revenue, generating $48.7 billion and
+        $47.6 billion, respectively, yet markets like Japan and South Korea are also not far behind
+        (<a href="https://www.visualcapitalist.com/video-game-revenue-by-country-2024/">visualcapitalist</a>).
+        This industry spans multiple platforms—consoles, PCs, and mobile devices—each with different player 
+        behaviors, preferences, and spending patterns. 
       </p>
       <p>
-        Genres have a similar ranking by North American and European sales, which follows the same
-        trend as Global Sales. By ordering the genres in the upper chart in same way as the bottom
-        chart, in decending order by Global Sales, it is made clear which regions follow and inform
-        the global trend, and which diverge, especially when toggling different regions on and off.
-      </p>
-      <p>
-        For most genres, North American sales are significantly higher than every other region,
-        with the exception of Role-Playing, where Japanese sales are very close in count, indicating
-        that Japanase sales in this genre a playing an important role in its global ranking by sales.
+        The video game market spans platforms and genres, appealing to players of all different
+        backgrounds and interests. As a major mode of recreation and storytelling, we’re interested
+        in understanding what drives success in this dynamic market. With  rapidly evolving trends in
+        genres, platforms, and monetization strategies, analyzing historical sales data can reveal
+        valuable patterns about what resonates with audiences across different regions and demographics.
+        This dataset allows us to explore which games, publishers, and platforms have shaped the industry's
+        remarkable trajectory. Through visualizations, we explore trends over time to interpret what
+        platforms and publishers are popular over the years. We compare genres, developers, and
+        platforms to consider what types of games are successful with a focus on differences in regions. 
       </p>
     </div>
 
-    <h3>Comparing Across Platforms</h3>
+    <div id="data-about">
+      <h2>About the Data</h2>
+      <p>
+        This data was downloaded from 
+        <a href="https://www.kaggle.com/datasets/gregorut/videogamesales/data" target="_blank">Kaggle</a> and
+        contains a list of video games with a sales count of greater than 100,000 copies.
+        The user who posted the dataset created it by scraping 
+        <a href="https://vgchartz.com" target="_blank">vgchartz.com</a>, a video game sales
+        tracking website based in the UK.
+        The data contains a column attribute called “rank,” corresponding to how the video games are
+        ordered on the site by number of sales. It also contains the columns Name, Year, 
+        Platform, Genre, Publisher, North American Sales, European Sales, Japan Sales, sales for
+        everywhere except those three regions, and Global Sales, which is total worldwide sales.
+        Values in each sales column represent sales in millions. The dataset includes video games
+        published between 1980 and 2020, inclusive.
+      </p>
+      <p>
+        The original dataset contained 16,598 rows. To reduce the size to better fit the guidelines
+        of this project, we preprocessed the data by dropping the rows containing null values and
+        filtered the data to contain only video games published between 2000 and 2015, inclusive.
+        This reduces our data set to just under 14,000 rows. 
+      </p>
+      
+      <table class="tg">
+        <thead>
+          <tr>
+            <th class="tg-0lax">Variable Name</th>
+            <th class="tg-0lax">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-0lax">Rank</td>
+            <td class="tg-0lax">Ranking of overall sales</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Name</td>
+            <td class="tg-0lax">The game's name</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Platform</td>
+            <td class="tg-0lax">Platform of the game's release (i.e. PC, PS4, etc.)</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Year</td>
+            <td class="tg-0lax">Year of the game's release</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Genre</td>
+            <td class="tg-0lax">Genre of the game</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Publisher</td>
+            <td class="tg-0lax">Publisher of the game</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">NA_Sales</td>
+            <td class="tg-0lax">Sales in North America (in millions)</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">EU_Sales</td>
+            <td class="tg-0lax">Sales in Europe (in millions)</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">JP_Sales</td>
+            <td class="tg-0lax">Sales in Japan (in millions)</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Other_Sales</td>
+            <td class="tg-0lax">Sales in the rest of the world (in millions)</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">Global_Sales</td>
+            <td class="tg-0lax">Total worldwide sales (in millions)</td>
+          </tr>
+        </tbody>
+      </table>
 
-    <div id="treemap">
-      <iframe src="interactive_visualizations/treemap.html"></iframe>
-      <p>
-        From this treemap, it is evident that Nintendo and Electronic Arts have consistently
-        dominated the gaming market over the years, recording total global sales of over 2,360M
-        and about 1,992M, respectively. Nintendo’s strongest contribution comes from the Wii, which
-        accounts for around 780M in global sales, while Electronic Arts’ leading platform is the
-        PS2, contributing about 491M units.
-      </p>
-      <p>
-        The hierarchical nature of this treemap effectively demonstrates how publishers' output is
-        comprised, and highights similarities and differences across publishers. For example, some
-        publishers are focused on producing content for their own platforms, like Nintendo and
-        Microsoft. At the same time, the Wii and PS2 are consistently in the top platforms across
-        publishers. This is likely because these were recent consoles from major developers during
-        the time range we're looking at (2000-2015), but prompts interesting questions for further
-        outside research about what exactly makes a gaming console successful.
-      </p>
     </div>
 
-    <div id="sankey">
-      <iframe src="interactive_visualizations/sankey_sales.html"></iframe>
+    <div id="visualizations">
+      <h2>Data Visualizations</h2>
+      <h3>Comparing Across Regions</h3>
       <p>
-        From this Sankey diagram, using a sales threshold of 141M, the Action genre emerges as the dominant
-        category, spanning three major platforms — X360, PS3, and PS2 — with cumulative sales
-        exceeding 800 M. The Shooter genre follows as the second-highest contributor, concentrated
-        primarily on X360 and PS3, with combined sales of 472.9M. In contrast, the Racing genre
-        appears more limited in scope, being associated only with the PS2 at this threshold and
-        having lower sales. As the sales threshold increases, Shooter, Sports, and Action remain
-        the most prominent genres, each maintaining total sales less than 286M but larger than
-        271M with the majority of their revenue originating from the North American market. 
+        The structure of the data lends itself to comparison of sales in different regions, and that's
+        where we started in order to investigate what might make a game successful, and if that's
+        different depending on the targeted region.
       </p>
-      <p>
-        When the threshold is reduced to 46 million units, additional genres — including
-        Simulation, Puzzle, Role-Playing, Fighting, and Adventure — become visible. These genres
-        demonstrate lower overall sales and are distributed primarily across less-popular or niche
-        platforms such as the DS, 3DS, GBA, PSP, Xbox, and Xbox One, while also appearing on more
-        widely adopted consoles like the Xbox 360 and Wii. This pattern suggests that while these
-        genres attract smaller audiences, they maintain broader platform diversity. 
-      </p>
-      <p>
-        This diagram allows for the exploration of the connection between genre and platform
-        considered earlier, demonstrating what type of game is driving the popularity of different
-        platforms, like sports games for the Wii. The sales threshold slider allows for clear
-        overview of how specific genres and platforms dominate at a high level while still allowing
-        for the exploration of less popular ones.
-      </p>
-    </div>
 
-    <h3>Comparison Over Time</h3>
-    <div id="linechart">
-      <div class="line-header">
-        <h3 id="linechart-title">
-          Video Game Sales Over Time
-        </h3>
-        <label>
-          Region:
-          <select id="regionSelect" aria-label="Region">
-            <option value="Global_Sales" selected>Global_Sales</option>
-            <option value="NA_Sales">NA_Sales</option>
-            <option value="EU_Sales">EU_Sales</option>
-            <option value="JP_Sales">JP_Sales</option>
-            <option value="Other_Sales">Other_Sales</option>
-          </select>
-        </label>
-
-        <label>
-          Platform:
-          <select id="platformSelect" aria-label="Platform Family">
-            <option value="All" selected>All</option>
-            <option value="Nintendo">Nintendo</option>
-            <option value="PlayStation">PlayStation</option>
-            <option value="Xbox">Xbox</option>
-            <option value="PC">PC</option>
-            <option value="Other">Other</option>
-          </select>
-        </label>
-      </div>
-      <p class="note">Tip: Toggle genres by clicking colors in the legend, hover over a point for details</p>
-
-      <div id="chart">
-        <div id="tooltip"></div>
+      <div id="pub-bars">
+        <img src="python_visualizations/NA_pub_bars.svg" />
+        <img src="python_visualizations/EU_pub_bars.svg" />
+        <img src="python_visualizations/JP_pub_bars.svg" />
       </div>
       <p>
-        This line chart is used to consider whether the genre popularity we've already explored
-        changes over time. Drop down selection allows us to optionally continue to compare across
-        regions, and showing/hiding genres by clicking the legend allows for easier legibility
-        and focus if desired.
+        Each of these bar charts shows the top ten publishers by the total number of sales across
+        all of their games. We can see that while the top publishers based on sales in North
+        America and Europe are very similar, the ranking of Publishers by Japansese sales is
+        notably different. Although Nintendo is a top two publisher across all regions, in Japan
+        it has displaced Electronic Arts for first place, and has a significantly higher number of
+        sales than even the second place publisher.
       </p>
       <p>
-        There is no clear trend in the release of popular games within specific genres. Each genre,
-        across regions and platform families, fluxuates across the years, with no obvious linear
-        shape. Spike in the line likely indicate specific games that were particularly successful.
+        It seems there may be a significant difference in sales trends between Japan and 
+        North America/Europe, but there are a variety of reasons a certain publisher might be more
+        popular than others. Beyond the quality of the games they produce, they may specialize in
+        a certain popular genre or publish games for a popular platform.
       </p>
+
+      <div id="genre-bars">
+        <iframe class="center" src="interactive_visualizations/genre_bars.html"></iframe>
+        <p class="interaction">
+          <strong>Interaction: </strong>
+          You can select which regions you want dispalyed in this the top bar chart by clicking the 
+          corresponding colored square in the legend.
+          To make more than one selection when clicking on the legend, hold down
+          the shift key. By default, the charts show data for the games released between 2000 and 2015, 
+          or you can select which year you want to view specifically from the drop down.
+        </p>
+        <p>
+          These bar charts depict sales in millions by video game genre. The top bar chart is a
+          side-by-side bar chart with the different colored bars representing different market
+          regions: Europe, Japan, North America, and all other regions.
+          The chart below is video game sales by genre, globally. The genres on
+          both charts are sorted in descending order by global sales.
+          From this visualization, we can see that North America seems to dominate sales, being the
+          region with the most sales for every genre. North America's lead in total sales was 
+          visibile in the previous bar graphs, but is clearer here when placed side-by-side with
+          other regions instead of relying on reading and remembering the numerical sales counts.
+        </p>
+        <p>
+          Genres have a similar ranking by North American and European sales, which follows the same
+          trend as Global Sales. By ordering the genres in the upper chart in same way as the bottom
+          chart, in decending order by Global Sales, it is made clear which regions follow and inform
+          the global trend, and which diverge, especially when toggling different regions on and off.
+        </p>
+        <p>
+          For most genres, North American sales are significantly higher than every other region,
+          with the exception of Role-Playing, where Japanese sales are very close in count, indicating
+          that Japanase sales in this genre a playing an important role in its global ranking by sales.
+        </p>
+      </div>
+
+      <h3>Comparison Over Time</h3>
+
+      <div id="linechart">
+        <div class="linechart-border">
+          <div class="line-header">
+            <h3 id="linechart-title">
+              Video Game Sales Over Time
+            </h3>
+            <label>
+              Region:
+              <select id="regionSelect" aria-label="Region">
+                <option value="Global_Sales" selected>Global_Sales</option>
+                <option value="NA_Sales">NA_Sales</option>
+                <option value="EU_Sales">EU_Sales</option>
+                <option value="JP_Sales">JP_Sales</option>
+                <option value="Other_Sales">Other_Sales</option>
+              </select>
+            </label>
+
+            <label>
+              Platform:
+              <select id="platformSelect" aria-label="Platform Family">
+                <option value="All" selected>All</option>
+                <option value="Nintendo">Nintendo</option>
+                <option value="PlayStation">PlayStation</option>
+                <option value="Xbox">Xbox</option>
+                <option value="PC">PC</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="center" id="chart">
+            <div id="tooltip"></div>
+          </div>
+        </div>
+
+        <p class="interaction">
+          <strong>Interaction: </strong> Toggle genres by clicking colors in the legend, hover over a point for details. 
+          Drop down selection allows us to optionally continue to compare across
+          regions, and showing/hiding genres by clicking the legend allows for easier legibility
+          and focus if desired.
+        </p>
+        <p>
+          The previous bar charts allowed for comparison of genre popularity across different years via the year drop down selection.
+          This line chart is used to consider whether that popularity changes over time in an identifiable trend.
+          As we can see from the lines, there is no clear trend in the release of popular games within specific genres.
+          Each genre, across regions and platform families, fluxuates across the years, with no obvious linear
+          shape. Spike in the line likely indicate specific games that were particularly successful.
+        </p>
+      </div>
+
+      <h3>Comparing Across Platforms</h3>
+
+      <div id="treemap">
+        <iframe class="center" src="interactive_visualizations/treemap.html"></iframe>
+        <p>
+          From this treemap, it is evident that Nintendo and Electronic Arts have consistently
+          dominated the gaming market over the years, recording total global sales of over 2,360M
+          and about 1,992M, respectively. Nintendo’s strongest contribution comes from the Wii, which
+          accounts for around 780M in global sales, while Electronic Arts’ leading platform is the
+          PS2, contributing about 491M units.
+        </p>
+        <p>
+          The hierarchical nature of this treemap effectively demonstrates how publishers' output is
+          comprised, and highights similarities and differences across publishers. For example, some
+          publishers are focused on producing content for their own platforms, like Nintendo and
+          Microsoft. At the same time, the Wii and PS2 are consistently in the top platforms across
+          publishers. This is likely because these were recent consoles from major developers during
+          the time range we're looking at (2000-2015), but prompts interesting questions for further
+          outside research about what exactly makes a gaming console successful.
+        </p>
+      </div>
+
+      <div id="sankey">
+        <iframe class="center" src="interactive_visualizations/sankey_sales.html"></iframe>
+        <p>
+          From this Sankey diagram, using a sales threshold of 141M, the Action genre emerges as the dominant
+          category, spanning three major platforms — X360, PS3, and PS2 — with cumulative sales
+          exceeding 800 M. The Shooter genre follows as the second-highest contributor, concentrated
+          primarily on X360 and PS3, with combined sales of 472.9M. In contrast, the Racing genre
+          appears more limited in scope, being associated only with the PS2 at this threshold and
+          having lower sales. As the sales threshold increases, Shooter, Sports, and Action remain
+          the most prominent genres, each maintaining total sales less than 286M but larger than
+          271M with the majority of their revenue originating from the North American market. 
+        </p>
+        <p>
+          When the threshold is reduced to 46 million units, additional genres — including
+          Simulation, Puzzle, Role-Playing, Fighting, and Adventure — become visible. These genres
+          demonstrate lower overall sales and are distributed primarily across less-popular or niche
+          platforms such as the DS, 3DS, GBA, PSP, Xbox, and Xbox One, while also appearing on more
+          widely adopted consoles like the Xbox 360 and Wii. This pattern suggests that while these
+          genres attract smaller audiences, they maintain broader platform diversity. 
+        </p>
+        <p>
+          This diagram allows for the exploration of the connection between genre and platform
+          considered earlier, demonstrating what type of game is driving the popularity of different
+          platforms, like sports games for the Wii. The sales threshold slider allows for clear
+          overview of how specific genres and platforms dominate at a high level while still allowing
+          for the exploration of less popular ones.
+        </p>
+      </div>
+
     </div>
 
-  </div>
+    <div id="conclusion">
+      <h2>Summary and Future Work</h2>
+      <p>
+        Through these data visualizations it’s clear that video game popularity is shaped by an
+        interplay of genre preference, regional differences, platform availability, and publisher
+        influence. Blockbuster genres dominate major consoles, niche genres spread across diverse
+        platforms, and publisher dominance shifts over time and varies by region. As new players
+        enter the market and hardware generations change, what makes a game popular will
+        continue to fluctuate.
+      </p>
+      <p>
+        Unfortunately, one of the limits of this dataset is that it’s out of date, focusing on
+        games released between 2000 and 2015. For this reason, although we are able to engage
+        with differences in categories like market region and genre, publishers and especially
+        platforms in this dataset are not current. 
+      </p>
+      <p>
+        In the future, the scope of this project could be expanded by examining current data that
+        reflects new consoles like the PS5 or the Nintendo Switch, as well as tying in data about
+        console sales to better understand how the success of a platform influences the popularity
+        of a game. 
+      </p>
+    </div>
+  </main>
 
-  <div id="conclusion">
-    <h2>Summary and Future Work</h2>
-    <p>
-      Through these data visualizations it’s clear that video game popularity is shaped by an
-      interplay of genre preference, regional differences, platform availability, and publisher
-      influence. Blockbuster genres dominate major consoles, niche genres spread across diverse
-      platforms, and publisher dominance shifts over time and varies by region. As new players
-      enter the market and hardware generations change, what makes a game popular will
-      continue to fluctuate.
-    </p>
-    <p>
-      Unfortunately, one of the limits of this dataset is that it’s out of date, focusing on
-      games released between 2000 and 2015. For this reason, although we are able to engage
-      with differences in categories like market region and genre, publishers and especially
-      platforms in this dataset are not current. 
-    </p>
-    <p>
-      In the future, the scope of this project could be expanded by examining current data that
-      reflects new consoles like the PS5 or the Nintendo Switch, as well as tying in data about
-      console sales to better understand how the success of a platform influences the popularity
-      of a game. 
-    </p>
-  </div>
+  <footer>
+    <p>DS4200 Final Project, Fall 2025: Shayna Basu, Reuben Colten, Mustafa Farooqui</p>
+  </footer>
   
   <script src="script.js"></script>
 </body>
